@@ -49,10 +49,13 @@
 
 		showPlantCollection: (plants) => {
 			const plantCollection = plants.map(plant => {
-				return viewUtils.buildPlantImage(plant, (_) => {
+				const li = document.createElement("li")
+				const img = viewUtils.buildPlantImage(plant, (_) => {
 					controller.state.selectedPlantId = plant.id
 					view.updatePlantCard(plant)
 				})
+				li.append(img)
+				return li
 			})
 			$("plantCollectionContainer").replaceChildren(...plantCollection)
 		},
