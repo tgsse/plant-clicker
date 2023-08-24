@@ -24,6 +24,18 @@
 	// App
 
 	const view = {
+		plantNameEl: undefined,
+		plantCounterEl: undefined,
+		plantImageEl: undefined,
+		plantDateEl: undefined,
+		plantCollectionEl: undefined,
+		init: () => {
+			view.plantNameEl = $("name")
+			view.plantCounterEl = $("counter")
+			view.plantImageEl = $("plantImageContainer")
+			view.plantDateEl = $("plantDate")
+			view.plantCollectionEl = $("plantCollectionContainer")
+		},
 		updatePlantCard: (plant) => {
 			view.updatePlantName(plant.name)
 			view.updateCounter(plant.counter)
@@ -32,19 +44,19 @@
 		},
 
 		updatePlantName: (value) => {
-			$("name").innerText = value
+			view.plantNameEl.innerText = value
 		},
 
 		updateCounter: (value) => {
-			$("counter").innerText = value
+			view.plantCounterEl.innerText = value
 		},
 
 		updateImage: (plant) => {
-			$("plantImageContainer").replaceChildren(viewUtils.buildPlantImage(plant, event => view.onPlantClick(event, plant)))
+			view.plantImageEl.replaceChildren(viewUtils.buildPlantImage(plant, event => view.onPlantClick(event, plant)))
 		},
 
 		updateDate: (createdOn) => {
-			$("plantDate").innerText = new Date(createdOn)
+			view.plantDateEl.innerText = new Date(createdOn)
 		},
 
 		showPlantCollection: (plants) => {
@@ -57,7 +69,7 @@
 				li.append(img)
 				return li
 			})
-			$("plantCollectionContainer").replaceChildren(...plantCollection)
+			view.plantCollectionEl.replaceChildren(...plantCollection)
 		},
 
 		onPlantClick: (event, plant) => {
@@ -82,6 +94,7 @@
 		},
 
 		init: () => {
+			view.init()
 			view.showPlantCollection(model.plants)
 		},
 
