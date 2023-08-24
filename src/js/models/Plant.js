@@ -6,6 +6,7 @@ class Plant {
 		this.stages = [...Array(4)].map((_, i) => {
 			return `${id}-stage-${i}.jpg`	
 		})
+		this.createdOn = Date.now()
 	}
 
 	name = ""

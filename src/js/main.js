@@ -28,6 +28,7 @@
 			view.updatePlantName(plant.name)
 			view.updateCounter(plant.counter)
 			view.updateImage(plant)
+			view.updateDate(plant.createdOn)
 		},
 
 		updatePlantName: (value) => {
@@ -40,6 +41,10 @@
 
 		updateImage: (plant) => {
 			$("plantImageContainer").replaceChildren(viewUtils.buildPlantImage(plant, event => view.onPlantClick(event, plant)))
+		},
+
+		updateDate: (createdOn) => {
+			$("plantDate").innerText = new Date(createdOn)
 		},
 
 		showPlantCollection: (plants) => {
