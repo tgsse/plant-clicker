@@ -1,33 +1,45 @@
+@import url("https://github.com/srejitk/Iridescent/blob/dev/main.css");
+
 body {
-	font-family: sans-serif;
+	font-family: 'Comfortaa', cursive;
+	padding-bottom: 1rem;
 }
 
 h1 {
 	font-size: 1.7rem;
 	margin-bottom: 0.5rem;
+	margin-top: 0;
 }
 
 h2 {
 	font-weight: normal;
-	font-size: 1.3rem;
+	font-size: 1.2rem;
+	margin-bottom: 0;
 	margin-top: 0;
 }
 
 h3 {
 	font-weight: normal;
 	font-size: 1.1rem;
-	margin-bottom: 0.5rem;
+	margin: 1rem 0;
 }
 
-#plantContainer {
+#plantDetailsContainer {
 	display: inline-block;
 	text-align: center;
-	background: #FFEAC0;
+	background: darkgrey;
 	border-radius: 1rem;
+	padding-bottom: 1rem;
 }
 
 #plantImageContainer {
 	padding: 1rem 2rem;
+}
+
+.collectionSection {
+	border: 1px solid gray;
+	border-width: 1px 0;
+	margin: 1rem 0;
 }
 
 ul li {
@@ -37,4 +49,31 @@ ul li {
 
 .hidden {
 	display: none;
+}
+
+#editBtn {
+	border-radius: 0.5rem;
+}
+
+.animatedPlant {
+	animation-play-state: paused;
+}
+
+nav {
+	padding: 1rem;
+}
+
+#plantDetailsSection {
+	display: none;
+	align-items: start;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.plantPreview {
+	height: 150px;
+}
+
+#editor {
+	padding: 1rem;
 }
